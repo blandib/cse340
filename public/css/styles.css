@@ -1,6 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400..700&family=Encode+Sans:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&display=swap');
+
+@media (max-width: 768px) {
+ background {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+ .container {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .left-column, .right-column {
+        width: 100%; /* Full width */
+    }
+    .grid-container {
+        grid-template-columns: 1fr; /* Switch to one column */
+    }
+}
 /******* Change Box Model ***************/
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+body {
+  width: 1200px;
+  text-align: center;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #e1f2f7;
+  border: 5px #f5358f;
+  height: 80px;
+  font-family: Oswald;
+}
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh; /* Full height */
+}
+
+.content {
+    width: 80%;
+    max-width: 1000px;
+    background-color: white; /* Content background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#top-header {
+   background-color: #e1f2f7;
+   min-height: 80px; /* Ensures the header has height */
+}
+
+.siteName a {
+  float: left;
+  width: 35%;
+  font-size: 1.5rem;
+  color: #000000;
+  text-decoration: none;
+  padding: 1.5rem;
+}
+#tools a {
+  float: right;
+  width: 35%;
+  font-size: 1.5rem;
+  color: #000000;
+  text-decoration: none;
+  padding: 1.5rem;
+}
+
+nav {
+ 
+  padding: 15px;
+  
+}
+nav ul {
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Aligns items vertically */
+    list-style: none;
+    padding: 15px;
+    margin: 0;
+    background-color: #000000;
+    min-height: 60px;
+    color: #9daaf2;
+}
+nav ul li {
+  margin:  0 55px;
+  
+}
+
+nav li:hover {
+  color: #f5358f; /* Hover effect */
+    
+}
+h1 {
+  float: left;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+}
+.hero-img {
+  width: 900px;
+  height: auto;
+  display: block;
+}
+.img-containerc {
+  position: relative;
+  display: inline-block;
+}
+.overlay-text {
+    position: absolute;
+    top: 50%; /* Move text towards the middle */
+    left: 20%;
+    transform: translate(-50%, -50%); /* Perfect centering */
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+button {
+  width: 150px;
+  color: #9daaf2;
+  background-color: #000000;
+  margin: 0 auto;
+}
+.container {
+    display: flex;
+    gap: 40px; /* Space between left and right sections */
+    align-items: start; /* Aligns content at the top */
+   
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates a 2x2 layout */
+    gap: 20px;
+    box-shadow: 5px 10px 10px #f5358f;
+    
+}
+
+.text {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.review-section {
+    flex: 1;
+    max-width: 400px; /* Limits width for readability */
+}
+
+.review-section h4 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.grid-item {
+  color: #9daaf2;
+  background-color: #000000;
+  text-decoration: underline;
+}
+.review-section p::before {
+   content: "• "; /* Bullet character */
+    color: black;
+    font-size: 1.5rem;
+    margin-right: 10px;
 }

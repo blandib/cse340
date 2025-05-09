@@ -10,7 +10,7 @@ const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
-
+const staticRoutes = require("./routes/static");
 
 /* ***********************
  * View Engine and Templates
@@ -18,7 +18,7 @@ const static = require("./routes/static")
 app.set("view engine", "ejs")
 app.use(expressLayouts)
 app.set("layout", "./layouts/layout") // not at views root
-
+app.use(staticRoutes);
 
 /* ***********************
  * Routes
@@ -43,3 +43,4 @@ app.get("/", function(req, res){
 app.listen(port, () => {
   console.log(`app listening on ${host}:${port}`)
 })
+app.use(express.static("public"));

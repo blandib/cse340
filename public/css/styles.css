@@ -1,45 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@400..700&family=Encode+Sans:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 
-@media (max-width: 768px) {
- background {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
- .container {
-        flex-direction: column; /* Stack items vertically */
-    }
-
-    .left-column, .right-column {
-        width: 100%; /* Full width */
-    }
-    .grid-container {
-        grid-template-columns: 1fr; /* Switch to one column */
-    }
-}
-/******* Change Box Model ***************/
+/******* Your Original CSS (Unchanged) *******/
 body {
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   text-align: center;
   justify-content: center;
   margin: 0 auto;
   background-color: #e1f2f7;
-  border: 5px #f5358f;
-  height: 80px;
-  font-family: Oswald;
+  border: 5px solid #f5358f;
+  min-height: 80px;
+  font-family: 'Oswald', sans-serif;
 }
+
 .background {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 100vh; /* Full height */
+    min-height: 100vh;
 }
 
 .content {
     width: 80%;
     max-width: 1000px;
-    background-color: white; /* Content background */
+    background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -47,7 +32,8 @@ body {
 
 #top-header {
    background-color: #e1f2f7;
-   min-height: 80px; /* Ensures the header has height */
+   min-height: 80px;
+   overflow: auto; /* Clear floats */
 }
 
 .siteName a {
@@ -58,6 +44,7 @@ body {
   text-decoration: none;
   padding: 1.5rem;
 }
+
 #tools a {
   float: right;
   width: 35%;
@@ -68,75 +55,89 @@ body {
 }
 
 nav {
- 
   padding: 15px;
-  
 }
+
 nav ul {
     display: flex;
-    justify-content: center; /* Centers items horizontally */
-    align-items: center; /* Aligns items vertically */
+    justify-content: center;
+    align-items: center;
     list-style: none;
     padding: 15px;
     margin: 0;
     background-color: #000000;
     min-height: 60px;
-    color: #9daaf2;
-}
-nav ul li {
-  margin:  0 55px;
-  
 }
 
-nav li:hover {
-  color: #f5358f; /* Hover effect */
-    
+nav ul li {
+  margin: 0 55px;
 }
+
+nav ul li {
+  color: #e1f2f7;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #f5358f;
+}
+
 h1 {
   float: left;
   font-size: 1.5rem;
   padding: 1.5rem;
 }
+
 .hero-img {
   width: 900px;
   height: auto;
   display: block;
+  margin: 0 auto;
 }
+
 .img-containerc {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  aspect-ratio: 900/600; /* Match your image ratio */
   position: relative;
-  display: inline-block;
+  overflow: hidden;
 }
+
 .overlay-text {
     position: absolute;
-    top: 50%; /* Move text towards the middle */
+    top: 50%;
     left: 20%;
-    transform: translate(-50%, -50%); /* Perfect centering */
+    transform: translate(-50%, -50%);
     color: white;
     font-size: 15px;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 5px 10px;
     border-radius: 5px;
 }
+
 button {
   width: 150px;
   color: #9daaf2;
   background-color: #000000;
   margin: 0 auto;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
 }
+
 .container {
     display: flex;
-    gap: 40px; /* Space between left and right sections */
-    align-items: start; /* Aligns content at the top */
-   
+    gap: 40px;
+    align-items: start;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Creates a 2x2 layout */
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     box-shadow: 5px 10px 10px #f5358f;
-    
 }
 
 .text {
@@ -148,7 +149,7 @@ button {
 
 .review-section {
     flex: 1;
-    max-width: 400px; /* Limits width for readability */
+    max-width: 400px;
 }
 
 .review-section h4 {
@@ -162,10 +163,102 @@ button {
   color: #9daaf2;
   background-color: #000000;
   text-decoration: underline;
+  padding: 10px;
+  text-align: center;
 }
+
 .review-section p::before {
-   content: "• "; /* Bullet character */
+   content: "• ";
     color: black;
     font-size: 1.5rem;
     margin-right: 10px;
+}
+
+/******* Responsive Additions Only *******/
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  body {
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  .hero-img, .img-containerc {
+    width: 100%;
+    max-width: 900px;
+  }
+  .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+  
+  nav ul li {
+    margin: 0 30px;
+  }
+  
+  .container {
+    gap: 30px;
+  }
+}
+
+/* Mobile (up to 767px) */
+@media (max-width: 767px) {
+  .siteName a, #tools a {
+    float: none;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+  
+  nav ul li {
+    margin: 8px 0;
+  }
+  
+  h1 {
+    float: none;
+    text-align: center;
+  }
+  
+  .container {
+    flex-direction: column;
+  }
+  
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .review-section {
+    max-width: 100%;
+  }
+  
+  .overlay-text {
+    left: 50%;
+    width: 80%;
+    text-align: center;
+  }
+  .hero-img {
+    width: 100%;
+    height: auto;
+    max-width: 400px; /* Optimized for mobile */
+  }
+  .img-containerc {
+    width: 100%;
+  }
+   #top-header {
+    display: flex;
+    flex-direction: column;
+  }
+  .siteName a, #tools a {
+    float: none;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+  }
 }

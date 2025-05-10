@@ -3,7 +3,22 @@
       <div class="content">
         <h1>Welcome to CSE Motors!</h1>
         <div class="img-containerc">
-          <img class="hero-img" src="/images/vehicles/delorean-tn.jpg" alt="vehicle">
+         <picture>
+  <!-- Mobile (smaller file) -->
+  <source media="(max-width: 767px)" 
+          srcset="/images/vehicles/delorean-tn.jpg?width=400&quality=70" 
+          width="400">
+  <!-- Desktop (original size) -->
+  <source media="(min-width: 768px)" 
+          srcset="/images/vehicles/delorean-tn.jpg?width=900&quality=80">
+  <!-- Fallback -->
+  <img class="hero-img" 
+       src="/images/vehicles/delorean-tn.jpg" 
+       loading="lazy"
+       alt="DMC Delorean"
+       width="900" 
+       height="600">
+</picture>
           <div class="overlay-text">
             <h2>DMC Delorean</h2>
             <h3>Cup holders</h3>

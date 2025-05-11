@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 
-/******* Your Original CSS (Unchanged) *******/
+
 body {
   width: 100%;
   max-width: 1200px;
@@ -99,7 +99,7 @@ h1 {
   display: block;
   margin: 0 auto;
   width: 100%;
-  aspect-ratio: 900/600; /* Match your image ratio */
+  aspect-ratio: 900/600; /* Match  image ratio */
   position: relative;
   overflow: hidden;
 }

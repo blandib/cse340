@@ -173,7 +173,113 @@ button {
     font-size: 1.5rem;
     margin-right: 10px;
 }
+/***item detail***/
+/* Grid container */
+/* Container for main content */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
 
+/* Center and style the title */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  
+  font-weight: bold;
+  color: #2c3e50;
+  justify-content: center;
+  justify-items: center;
+}
+
+
+/* Grid container */
+#inv-display {
+  display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 1000px;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+/* Each vehicle card */
+#inv-display li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+#inv-display li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Vehicle image */
+#inv-display img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Card content */
+.namePrice {
+  padding: 1rem;
+  text-align: left;
+}
+
+.namePrice h2 {
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.namePrice span {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #27ae60;
+  margin-bottom: 0.5rem;
+}
+
+.namePrice p {
+  font-size: 0.95rem;
+  margin: 0.3rem 0;
+}
+
+.namePrice strong {
+  color: #333;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .item-container {
+        grid-template-columns: 1fr; /* Stack items in one column on small screens */
+    }
+}
+
+img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.item-info {
+    flex: 1;
+    font-size: 1.2em;
+}
 /******* Responsive Additions Only *******/
 
 /* Tablet (768px - 1024px) */
@@ -221,7 +327,7 @@ button {
     margin: 8px 0;
   }
   
-  h1 {
+  .welcome {
     float: none;
     text-align: center;
   }
@@ -261,4 +367,53 @@ button {
     text-align: center;
     padding: 0.5rem;
   }
+  /***********detail css***/
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Grid */
+  #inv-display {
+    grid-template-columns: 1fr; /* Stack items vertically */
+    gap: 1rem; /* Reduced gap */
+  }
+
+  /* Vehicle cards */
+  #inv-display li {
+    padding: 0.5rem; /* Reduced padding */
+  }
+
+  /* Adjust content text */
+  .namePrice h2 {
+    font-size: 1rem; /* Smaller title */
+  }
+
+  .namePrice span {
+    font-size: 1rem; /* Adjusted price size */
+  }
+
+  .namePrice p {
+    font-size: 0.85rem; /* Smaller paragraph text */
+  }
+   #inv-display{
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto 20px !important;
+        overflow: hidden !important; 
+    }
+
+    main img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+    
+}
+/* Responsive Styles for screens less than 400px */
+@media screen and (max-width: 400px) {
+  /* Title */
+  
 }

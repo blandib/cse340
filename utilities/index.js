@@ -7,7 +7,7 @@ const Util = {};
  **************************/
 Util.getNav = async function () {
   let data = await invModel.getClassifications();
-  let classifications = data.rows; // Use this instead of data.rows directly
+  let classifications = data.rows; 
 
   let list = "<ul>";
   console.log(classifications);

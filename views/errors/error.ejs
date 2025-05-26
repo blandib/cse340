@@ -1,0 +1,20 @@
+<%#-Improves SEO by reinforcing meaningful page titles.Ensures consistency 
+between the <title> and <h1>. Prevents empty headings by redirecting to the 
+homepage if no title exists%>
+<% if (title) { %>
+<h1><%= title %></h1>
+<% } else {
+  res.redirect('/')
+} %>
+
+
+<%# messages() %>
+<p><%- message %></p>
+<main>
+  <h1>500 - Server Error</h1>
+  <p><%= message %></p>
+ <% if (errorDetails) { %>
+  <p><strong>Dev Info:</strong> <%= errorDetails %></p>
+<% } %>
+</main>
+

@@ -235,10 +235,10 @@ main {
 
 p  {
   font-size: 1.5rem;
-  font-weight: bold;
+  
 }
 strong {
-  font-weight: bold;
+  
   font-size: 1rem;
   color: #000;
 }
@@ -258,7 +258,7 @@ strong {
   display: block;
   font-size: 1.1rem;
   font-weight: bold;
-  color: #27ae60;
+  color: #2c3e50;
   margin-bottom: 0.5rem;
 }
 

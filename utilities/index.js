@@ -83,7 +83,13 @@ function buildItemHTML(item) {
 
   return `
     <div class="vehicle-detail-container">
-      <img class="vehicle-image" src="${item.inv_image}" alt="Image of ${item.inv_make} ${item.inv_model}">
+      <img 
+  class="vehicle-image" 
+  src="${item.inv_image}" 
+  alt="Image of ${item.inv_make} ${item.inv_model}" 
+  loading="lazy" 
+  width="600" height="400">
+
       <div class="vehicle-info">
         <h1>${item.inv_make} ${item.inv_model} (${item.inv_year})</h1>
         <p><strong>Price:</strong> ${priceFormatted}</p>

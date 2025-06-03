@@ -1,0 +1,11 @@
+<% if (messages && Object.keys(messages).length > 0) { %>
+  <div id="messages">
+    <% Object.keys(messages).forEach(type => { %>
+      <ul class="<%= type %>">
+        <% messages[type].forEach(msg => { %>
+          <li><%= msg %></li>
+        <% }) %>
+      </ul>
+    <% }) %>
+  </div>
+<% } %>

@@ -1,7 +1,18 @@
-
+  
     <div class="background">
       <div class="content">
         <h1 class="Welcome">Welcome to CSE Motors!</h1>
+        <% if (messages && Object.keys(messages).length > 0) { %>
+  <div id="messages">
+    <% Object.keys(messages).forEach(type => { %>
+      <ul class="<%= type %>">
+        <% messages[type].forEach(msg => { %>
+          <li><%= msg %></li>
+        <% }) %>
+      </ul>
+    <% }) %>
+  </div>
+<% } %>
         <div class="img-containerc">
          <picture>
   <!-- Mobile (smaller file) -->

@@ -281,7 +281,169 @@ img {
   flex: 1;
   font-size: 1.2em;
 }
+/*************from css*************************/
+.form {
+    font-family: Arial, sans-serif;
+    
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
 
+/* Form Container */
+form {
+    background: rgb(27, 9, 77);
+    padding: 20px;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border: 2px #f5358f;
+}
+
+/* Label Styling */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: left;
+    color: white;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Submit Button */
+button {
+    background-color: #fff;
+    color: #2c3e50;
+    padding: 10px;
+    
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Signup Link */
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+.form-text {
+  color: white;
+}
+p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+/* Centering the registration form */
+.reg {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers form horizontally */
+    justify-content: center; /* Centers form vertically */
+    min-height: 100vh; /* Ensures full height coverage */
+    
+    padding: 20px;
+}
+small {
+  color: white;
+  font-size: 20px;
+}
+/* Styling the form */
+form {
+    background: rgb(57, 41, 129);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.password-requirements {
+  font-size: 0.9em;
+  color: white;
+  margin-top: 0.25em;
+}
+
+.password-requirements ul {
+  margin: 0.25em 0 1em 1.2em;
+  padding-left: 0;
+}
+#togglePassword {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+input:required:invalid, input:focus:invalid {
+ background-image: url(/images/invalid.png);
+ background-position: right top;
+ background-repeat: no-repeat;
+}
+ input:required:valid {
+ background-image: url(/images/valid.png);
+ background-position: right top;
+ background-repeat: no-repeat;
+ }
+/* Submit Button */
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Centering the "Already have an account?" link */
+p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+  
 /* Responsive */
 @media (max-width: 1024px) {
   body {

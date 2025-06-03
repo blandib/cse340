@@ -5,6 +5,7 @@
 /* ***********************
  * Require Statements
  *************************/
+const accountRoute = require("./routes/accountRoute")
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const env = require("dotenv").config();
@@ -14,9 +15,40 @@ const staticRoutes = require("./routes/static");
 const baseController = require("./controllers/baseController");
 const inventoryRoute = require("./routes/inventoryRoute");
 const utilities = require("./utilities/index");
+const bodyParser = require("body-parser");
 
 
 
+
+/* ***********************
+ * Middleware
+ * ************************/
+const session = require("express-session")
+const flash = require("connect-flash")
+const messages = require("express-messages")
+const pool = require("./database")
+
+app.use(
+  session({
+    store: new (require("connect-pg-simple")(session))({
+      createTableIfMissing: true,
+      pool,
+    }),
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    name: "sessionId",
+    cookie: { maxAge: 1000 * 60 * 60 * 2 },
+  })
+)
+
+app.use(flash())
+
+app.use((req, res, next) => {
+  res.locals.messages = messages(req, res)
+  next()
+})
+app.use(express.urlencoded({ extended: true }))
 /* ***********************
  * View Engine and Templates
  *************************/
@@ -25,10 +57,13 @@ app.use(expressLayouts);
 app.set("layout", "./layouts/layout"); 
 app.use(staticRoutes);
 
+
 /* ***********************
  * Routes
  *************************/
 app.use(require("./routes/static"));
+app.use("/account", accountRoute);
+
 app.get("/", baseController.buildHome);
 app.use("/inv", require("./routes/inventoryRoute"));
 //app.use(static)
@@ -43,16 +78,7 @@ app.use(async (req, res, next) => {
 * Express Error Handler
 * Place after all other middleware
 *************************/
-/*app.use(async (err, req, res, next) => {
-  let nav = await utilities.getNav()
-  console.error(`Error at: "${req.originalUrl}": ${err.message}`)
-  if(err.status == 404){ message = err.message} else {message = 'Oh no! There was a crash. Maybe try a different route?'}
-  res.render("errors/error", {
-    title: err.status || 'Server Error',
-    message,
-    nav
-  })
-})*/
+
 app.use((err, req, res, next) => {
   utilities.getNav().then(nav => {
     console.error(`Error at: "${req.originalUrl}": ${err.message}`);
@@ -90,6 +116,8 @@ app.use((req, res, next) => {
     res.status(404).render("error", { title: "404 Error", message: "Page not found!" });
 });
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 /* ***********************
  * Local Server Information
@@ -110,4 +138,3 @@ app.listen(port, () => {
   console.log(`app listening on ${host}:${port}`);
 });
 app.use(express.static("public"));
-

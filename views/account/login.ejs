@@ -1,0 +1,31 @@
+<head>
+    <title><%= title %></title>
+</head>
+<body>
+    <h1><%= title %></h1>
+    <% if (messages) { %>
+    <div id="messages">
+        <% Object.keys(messages).forEach(function(type) { %>
+            <ul class="<%= type %>">
+                <% messages[type].forEach(function(msg) { %>
+                    <li><%= msg %></li>
+                <% }) %>
+            </ul>
+        <% }) %>
+    </div>
+<% } %>
+<div class="form">
+<form id="loginForm" action="/account/login" method="post">
+
+    <label for="email">Email:</label>
+    <input type="email" name="account_email" id="email" required>
+    
+    <label for="password">Password:</label>
+    <input type="password" name="account_password" id="password" required>
+
+    <button type="submit">Login</button>
+    <p class="form-text">Don't have an account? <a href="/account/register">Sing Up</a></p>
+</form>
+
+</div>
+</body>

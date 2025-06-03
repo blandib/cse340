@@ -3,17 +3,7 @@
 </head>
 <body>
     <h1><%= title %></h1>
-    <% if (messages) { %>
-    <div id="messages">
-        <% Object.keys(messages).forEach(function(type) { %>
-            <ul class="<%= type %>">
-                <% messages[type].forEach(function(msg) { %>
-                    <li><%= msg %></li>
-                <% }) %>
-            </ul>
-        <% }) %>
-    </div>
-<% } %>
+   <%- messages() %>
 <div class="form">
 <form id="loginForm" action="/account/login" method="post">
 
